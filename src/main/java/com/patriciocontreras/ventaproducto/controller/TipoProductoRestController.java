@@ -98,7 +98,7 @@ public class TipoProductoRestController {
 			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
 			return new ResponseEntity<Map<String, Object>>(response,HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-		//se podria pasar un map con un mensaje y con el gasto creado
+		//se podria pasar un map con un mensaje y con el tipo de producto creado
 			response.put("mensaje", "El tipo de producto ha sido creado con éxito! ");
 			response.put("tipo de producto", tipoProductoNew);
 			return new ResponseEntity<Map<String, Object>>(response,HttpStatus.CREATED);
@@ -133,7 +133,7 @@ public class TipoProductoRestController {
 		}
 		
 		if(tipoProductoActual == null) {
-			response.put("mensaje", "Error: no se pudo editar, el tipo de gasto con ID: ".concat(id.toString().concat(" no existe en la base de datos!")));
+			response.put("mensaje", "Error: no se pudo editar, el tipo de producto con ID: ".concat(id.toString().concat(" no existe en la base de datos!")));
 			return new ResponseEntity<Map<String, Object>>(response,HttpStatus.NOT_FOUND);
 		}
 		
