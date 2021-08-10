@@ -1,7 +1,7 @@
 /*INSERT tipos de productos*/
 
 INSERT INTO tipos_productos (tipo,descripcion) VALUES ('Full cobertura','incrementa su precio a medida que pasa el tiempo');
-INSERT INTO tipos_productos (tipo,descripcion) VALUES ('Full cobertura Super duper',' tal como el "Full Cobertura", incrementa su precio a medida que se acerca su fecha de vencimiento');
+INSERT INTO tipos_productos (tipo,descripcion) VALUES ('Full cobertura Super duper',' tal como el Full Cobertura, incrementa su precio a medida que se acerca su fecha de vencimiento');
 INSERT INTO tipos_productos (tipo,descripcion) VALUES ('Super avance','dismuniye su precio el doble de rapido que un producto normal');
 INSERT INTO tipos_productos (tipo,descripcion) VALUES ('Mega cobertura','nunca vence para vender y nunca disminuye su precio y tiene un precio fijo de 180.');
 INSERT INTO tipos_productos (tipo,descripcion) VALUES ('Cobertura','producto normal');
