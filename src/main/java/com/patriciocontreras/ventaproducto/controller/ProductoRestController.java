@@ -184,4 +184,20 @@ public class ProductoRestController {
 	public List<Producto> listarProductosVendidos(){
 		return productoService.findTiposProductos();
 	}*/
+	
+	@GetMapping("/productos/evaluateProducts/{dia}")
+	public ResponseEntity<?> vlistarProductosVendidos(@PathVariable int dia){
+		Map<String, Object> response = new HashMap<>();
+		try {
+		productoService.findTiposProductos(dia);
+		}catch (DataAccessException e) {
+			response.put("mensaje", "Error al variar por dia producto de la base de datos!");
+			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
+			return new ResponseEntity<Map<String, Object>>(response,HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+		response.put("mensaje", "Se realizo con exito la variacion para ese dia, revice la direccion: localhost:8080/api/productos para ver los resultados aplicados");
+		
+		return new ResponseEntity<Map<String, Object>>(response,HttpStatus.OK);
+	}
 }

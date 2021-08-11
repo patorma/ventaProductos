@@ -52,10 +52,13 @@ public class IProductoServiceImpl implements IProductoService {
 		
 	}
 
+	
+
 	@Override
-	public List<Producto> findTiposProductos() {
-		// TODO Auto-generated method stub
-		return null;
+	@Transactional
+	public void findTiposProductos(int dia) {
+		
+		 productoDao.findTiposProductos(dia);
 	}
 
 	/*@Override

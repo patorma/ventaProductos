@@ -19,6 +19,6 @@ public interface IProductoService {
 	
 	public void delete(Long id);
 	
-	public List<Producto> findTiposProductos();
+	public void  findTiposProductos(int dia);
 
 }
