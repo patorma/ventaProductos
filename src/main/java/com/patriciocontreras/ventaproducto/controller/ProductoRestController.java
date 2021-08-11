@@ -170,6 +170,7 @@ public class ProductoRestController {
 		
 		try {
 			productoService.delete(id);
+			
 		}catch (DataAccessException e) {
 			response.put("mensaje", "Error al eliminar el producto de la base de datos!");
 			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
@@ -186,18 +187,12 @@ public class ProductoRestController {
 	}*/
 	
 	@GetMapping("/productos/evaluateProducts/{dia}")
-	public ResponseEntity<?> vlistarProductosVendidos(@PathVariable int dia){
-		Map<String, Object> response = new HashMap<>();
-		try {
+	public List<?> vlistarProductosVendidos(@PathVariable int dia){
+	
 		productoService.findTiposProductos(dia);
-		}catch (DataAccessException e) {
-			response.put("mensaje", "Error al variar por dia producto de la base de datos!");
-			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
-			return new ResponseEntity<Map<String, Object>>(response,HttpStatus.INTERNAL_SERVER_ERROR);
-		}
+		return productoService.findAll();
 		
-		response.put("mensaje", "Se realizo con exito la variacion para ese dia, revice la direccion: localhost:8080/api/productos para ver los resultados aplicados");
 		
-		return new ResponseEntity<Map<String, Object>>(response,HttpStatus.OK);
+	
 	}
 }
