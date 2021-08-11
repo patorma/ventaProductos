@@ -180,5 +180,8 @@ public class ProductoRestController {
 		return new ResponseEntity<Map<String, Object>>(response,HttpStatus.OK);
 	}
 	
-
+	/*@GetMapping("/productos/productosVendidos")
+	public List<Producto> listarProductosVendidos(){
+		return productoService.findTiposProductos();
+	}*/
 }

@@ -10,20 +10,17 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
-import org.hibernate.validator.constraints.Range;
-
+import javax.persistence.JoinColumn;
+import javax.persistence.UniqueConstraint;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
@@ -33,62 +30,45 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 @Entity
-@Table(name = "productos")
+@Table(name="registros_vendidos")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @NonNull
-public class Producto implements Serializable {
-	
+public class RegistroVendidos implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Size(min=3, max=100)
+	@Column(nullable = false) 
+	@Size(min=3, max=255)
 	@NotEmpty 
-	@Column(nullable = false,unique=true) 
-	private String nombre;
-	
-	@Column(nullable = false) 
-	@Range(min=01,message = "Solo numeros positivos")
-	private int price;
-	
-	@Column(nullable = false) 
-	private int sellIn;
-	
-	@Column(nullable = false)
-	private int stock;
-	
-	@Column(nullable = false)
-	@NotEmpty  
-	@Size(min=10, max=300)
 	private String descripcion;
-
-	@Column(name = "fecha_ingreso")
+	
+	@Column(name = "fecha_venta")
 	@NotNull(message = "no puede estar vacio")
 	@Temporal(TemporalType.DATE)
 	private Date fecha;
 	
-	@NotNull(message = "El tipo de producto no puede estar vacio")
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="tipo_id")
+	@JoinColumn(name="producto_id")
 	@JsonIgnoreProperties({"hibernateLazyInitializer","hadler"})
-	private TipoProducto tipo;
+	private Producto  producto;
 	
 	/*@ManyToMany(fetch =  FetchType.LAZY)
-	@JoinTable(name = "productos_vendidos",joinColumns = @JoinColumn(name="producto_id")
-	,inverseJoinColumns = @JoinColumn(name="cliente_id"),
-	uniqueConstraints = {@UniqueConstraint(columnNames = {"producto_id","cliente_id"})})
-	private List<Cliente> clientes;*/
+	@JoinTable(name = "productos_vendidos",joinColumns = @JoinColumn(name="cliente_id")
+	,inverseJoinColumns  = @JoinColumn(name="producto_id"),
+	uniqueConstraints = {@UniqueConstraint(columnNames = {"cliente_id","producto_id"})}
+	)
+	private List<Producto> productos;*/
 	
-	/*@ManyToMany(mappedBy = "productos")
-	@JsonIgnoreProperties({"hibernateLazyInitializer","hadler"})
-	private List<Cliente> clientes;*/
-	/**
-	 * 
-	 */
+	
+	
+	
+	
+	
+	
 	private static final long serialVersionUID = 1L;
-	
 
 }

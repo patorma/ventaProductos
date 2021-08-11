@@ -23,27 +23,14 @@ INSERT INTO productos (nombre,price, sell_in,stock,fecha_ingreso,descripcion,tip
 INSERT INTO productos (nombre,price, sell_in,stock,fecha_ingreso,descripcion,tipo_id) VALUES ('Lavadora mademsa ubuntu',20,10,70,'2021-07-26','Corresponde a televisores de marca LG',5);
 
 
-/*INSERT clientes*/
+/*INSERT registros de ventas*/
+
+INSERT INTO registros_vendidos (descripcion,fecha_venta,producto_id) VALUES ('Se vendio una lavadora','2021-08-13',4);
+INSERT INTO registros_vendidos (descripcion,fecha_venta,producto_id) VALUES ('Se vendio un notebook HP','2021-08-14',5);
+INSERT INTO registros_vendidos (descripcion,fecha_venta,producto_id) VALUES ('Se vendio un Tv Lg','2021-08-11',1);
+INSERT INTO registros_vendidos (descripcion,fecha_venta,producto_id) VALUES ('Se vendio un Acer notebook nitro','2021-08-25',9);
 
 
-INSERT INTO clientes (nombre,apellido,telefono,direccion) VALUES ('patricio','contreras',9463699,'pasaje los acacios #110');
-INSERT INTO clientes (nombre,apellido,telefono,direccion) VALUES ('gonzalo','suarez',9463699,'pasaje los acacios #110');
-INSERT INTO clientes (nombre,apellido,telefono,direccion) VALUES ('juan','torres',9463699,'pasaje los acacios #110');
-INSERT INTO clientes (nombre,apellido,telefono,direccion) VALUES ('raul','contreras',9463699,'pasaje los acacios #110');
-INSERT INTO clientes (nombre,apellido,telefono,direccion) VALUES ('leslie','vergara',9463699,'pasaje los acacios #110');
-INSERT INTO clientes (nombre,apellido,telefono,direccion) VALUES ('fernanda','paulsen',9463699,'pasaje los acacios #110');
-INSERT INTO clientes (nombre,apellido,telefono,direccion) VALUES ('Daniel','gonzalez',9463699,'pasaje los acacios #110');
-INSERT INTO clientes (nombre,apellido,telefono,direccion) VALUES ('pablo','torrealba',9463699,'pasaje los acacios #110');
-INSERT INTO clientes (nombre,apellido,telefono,direccion) VALUES ('ivan','ortiz',9463699,'pasaje los acacios #110');
-INSERT INTO clientes (nombre,apellido,telefono,direccion) VALUES ('pedro','salazar',9463699,'pasaje los acacios #110');
-INSERT INTO clientes (nombre,apellido,telefono,direccion) VALUES ('jose','herrera',9463699,'pasaje los acacios #110');
-INSERT INTO clientes (nombre,apellido,telefono,direccion) VALUES ('juan','guerrero',9463699,'pasaje los acacios #110');
-INSERT INTO clientes (nombre,apellido,telefono,direccion) VALUES ('tefy','espinoza',9463699,'pasaje los acacios #110');
 
-/*Productos vendidos*/
 
-INSERT INTO productos_vendidos (producto_id,cliente_id) VALUES (4,1);
-INSERT INTO productos_vendidos (producto_id,cliente_id) VALUES (4,3);
-INSERT INTO productos_vendidos (producto_id,cliente_id) VALUES (1,10);
-INSERT INTO productos_vendidos (producto_id,cliente_id) VALUES (9,13);
 
