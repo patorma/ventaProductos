@@ -10,10 +10,14 @@ de producto y productos vendidos_
 _Que cosas necesitas para instalar el software y como instalarlas?_
 
 ```
-Necesitas además tener preferentemente el IDE Spring Tool Suite o cualquier IDE compatible con JAVA si es Eclipse bajar plugin para spring.
-Este proyecto fue hecho con OpenJDK 14. Tener cualquier tipo de base de datos en el computador ( En este proyecto se trabajo con MySQL). 
-Tener instalado  en el IDE la libreria Lombok. Lo anterior no es obligatoio ya que es para evitar hacer manual los getter y setter y el constructor de las clases. 
-Se debe contar con Postman o cualquier software para probar las rutas de la API. Ver en elproyecto la siguiente ruta de carpeta (se llama encuessta) : src/main/resources/application.properties en este ultimo archivo modificar los parametros de conexion a la base de datos segun sea la preferencia.
+Necesitas además tener preferentemente el IDE Spring Tool Suite o cualquier IDE compatible con JAVA si es Eclipse
+bajar plugin para spring. Este proyecto fue hecho con OpenJDK 14. Tener cualquier tipo de base de datos 
+en el computador ( En este proyecto se trabajo con MySQL). Tener instalado  en el IDE la libreria Lombok. Lo anterior
+no es obligatoio ya que es para evitar hacer manual los getter y setter y el constructor de 
+las clases. Se debe contar con Postman o cualquier software para probar las rutas de la API. 
+Ver en elproyecto la siguiente ruta de carpeta (se llama encuessta) : 
+src/main/resources/application.properties en este ultimo archivo
+modificar los parametros de conexion a la base de datos segun sea la preferencia.
 ```
 
 ### Instalación 🔧
